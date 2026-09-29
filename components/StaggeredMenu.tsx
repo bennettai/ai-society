@@ -89,6 +89,28 @@ export const StaggeredMenu = ({
   const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
   const busyRef = useRef(false);
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
+  const logoRef = useRef<HTMLDivElement | null>(null);
+
+  // The header lives in a fixed wrapper, so shift the logo up by the scroll
+  // offset each frame to make it scroll away with the page while the MENU
+  // button stays fixed. Polling via rAF (rather than scroll events) also
+  // catches Lenis and programmatic scroll resets.
+  useEffect(() => {
+    const logo = logoRef.current;
+    if (!logo) return;
+    let lastY = Number.NaN;
+    let frame = 0;
+    const tick = () => {
+      const y = window.scrollY;
+      if (y !== lastY) {
+        lastY = y;
+        logo.style.transform = `translate3d(0, ${-y}px, 0)`;
+      }
+      frame = requestAnimationFrame(tick);
+    };
+    tick();
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -509,7 +531,7 @@ export const StaggeredMenu = ({
         className="staggered-menu-header"
         aria-label="Main navigation header"
       >
-        <div className="sm-logo" aria-label="Logo">
+        <div ref={logoRef} className="sm-logo" aria-label="Logo">
           <Link
             href="/"
             className="sm-logo-link"

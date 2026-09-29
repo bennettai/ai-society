@@ -569,6 +569,8 @@ export default function LinearRegressionArticlePage() {
 
                 <div className="relative bg-[#EBF5FB]/30 border border-[#1A1816]/10 p-2 rounded-[2px] h-72 flex items-end">
                   <svg
+                    role="img"
+                    aria-label="Scatter plot with a fitted regression line and its residuals"
                     viewBox="0 0 100 100"
                     className="w-full h-full overflow-visible select-none"
                   >
@@ -936,6 +938,7 @@ export default function LinearRegressionArticlePage() {
                   />
                   <Looped label="Animated residual plot whose vertical spread fans open and snaps shut, widest at high fitted values">
                     <svg
+                      aria-hidden="true"
                       viewBox="0 0 400 240"
                       className="w-full select-none overflow-visible"
                     >

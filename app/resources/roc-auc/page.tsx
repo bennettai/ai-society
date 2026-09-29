@@ -625,6 +625,8 @@ export default function RocAucArticlePage() {
 
                 <div className="relative bg-[#EBF5FB]/30 border border-[#1A1816]/10 p-2 rounded-[2px] h-64 flex items-end">
                   <svg
+                    role="img"
+                    aria-label="Score distributions for class 0 (negative) and class 1 (positive)"
                     viewBox="0 0 400 200"
                     className="w-full h-full overflow-visible select-none"
                   >
@@ -752,6 +754,8 @@ export default function RocAucArticlePage() {
               <div className="lg:col-span-7 border border-[#1A1816]/15 bg-[#FAF9F5] p-5">
                 <div className="relative aspect-square max-w-[420px] mx-auto bg-[#F4F1EA] border border-[#1A1816]/15 p-4 rounded-[2px]">
                   <svg
+                    role="img"
+                    aria-label="ROC curve of true positive rate against false positive rate"
                     viewBox="0 0 300 300"
                     className="w-full h-full overflow-visible select-none"
                   >
@@ -1061,7 +1065,11 @@ export default function RocAucArticlePage() {
                 label="Looped animation: two ROC curves with identical area cross each other while each area fills and empties in turn, showing that the same AUC can describe very different curves"
                 className="bg-[#F4F1EA] border border-[#1A1816]/10 p-3 rounded-[2px] max-w-[520px] mx-auto"
               >
-                <svg viewBox="0 0 380 320" className="w-full select-none">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 380 320"
+                  className="w-full select-none"
+                >
                   <line
                     x1="40"
                     y1="280"

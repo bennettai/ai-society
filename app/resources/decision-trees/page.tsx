@@ -856,6 +856,7 @@ export default function DecisionTreesArticlePage() {
                   className="bg-[#F4F1EA] border border-[#1A1816]/10 p-3 rounded-[2px] overflow-x-auto"
                 >
                   <svg
+                    aria-hidden="true"
                     viewBox="0 0 660 400"
                     className="w-full min-w-[520px] select-none"
                   >

@@ -429,16 +429,18 @@ export default function CrossValidationArticlePage() {
                   {Array.from({ length: kFolds }, (_, iterIdx) => {
                     const isCurrent = iterIdx === activeIteration;
                     return (
-                      <div
+                      <button
+                        type="button"
                         key={iterIdx}
+                        aria-pressed={isCurrent}
                         onClick={() => setActiveIteration(iterIdx)}
-                        className={`p-2.5 border transition-all cursor-pointer ${
+                        className={`block w-full text-left p-2.5 border transition-all cursor-pointer ${
                           isCurrent
                             ? "border-[#DE5D35] bg-[#DE5D35]/5 ring-1 ring-[#DE5D35]"
                             : "border-[#1A1816]/15 bg-white opacity-85 hover:opacity-100"
                         }`}
                       >
-                        <div className="flex items-center justify-between text-[11px] font-mono mb-1.5">
+                        <span className="flex items-center justify-between text-[11px] font-mono mb-1.5">
                           <span
                             className={
                               isCurrent
@@ -452,13 +454,13 @@ export default function CrossValidationArticlePage() {
                             Holdout Loss:{" "}
                             {(foldScores[iterIdx] * 100).toFixed(1)}%
                           </span>
-                        </div>
+                        </span>
 
-                        <div className="flex gap-1 h-6">
+                        <span className="flex gap-1 h-6">
                           {Array.from({ length: kFolds }, (_, foldIdx) => {
                             const isHoldout = foldIdx === iterIdx;
                             return (
-                              <div
+                              <span
                                 key={foldIdx}
                                 className={`flex-1 flex items-center justify-center text-[10px] font-mono rounded-[1px] transition-colors ${
                                   isHoldout
@@ -467,11 +469,11 @@ export default function CrossValidationArticlePage() {
                                 }`}
                               >
                                 {isHoldout ? "VAL" : `F${foldIdx + 1}`}
-                              </div>
+                              </span>
                             );
                           })}
-                        </div>
-                      </div>
+                        </span>
+                      </button>
                     );
                   })}
                 </div>

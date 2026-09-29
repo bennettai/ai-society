@@ -69,6 +69,7 @@ export default function RoadmapPage() {
               pointerEvents: "none",
               userSelect: "none",
             }}
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: hard-coded SVG markup from the local shapes constant
             dangerouslySetInnerHTML={{ __html: shapes[f.id] }}
           />
         ))}

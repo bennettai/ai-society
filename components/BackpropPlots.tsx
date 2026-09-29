@@ -105,6 +105,8 @@ export default function BackpropPlots({
         </div>
 
         <svg
+          role="img"
+          aria-label="Fitted function ŷ(x) against the training data"
           viewBox={`0 0 ${scatterConfig.width} ${scatterConfig.height}`}
           className="w-full h-auto"
         >
@@ -209,6 +211,7 @@ export default function BackpropPlots({
 
             return (
               <circle
+                // biome-ignore lint/suspicious/noArrayIndexKey: point i is dataset example i (matched against stepTrace.exampleIndex)
                 key={`dot-${i}`}
                 cx={cx}
                 cy={cy}
@@ -290,6 +293,8 @@ export default function BackpropPlots({
         </div>
 
         <svg
+          role="img"
+          aria-label="Loss history (MSE) over training"
           viewBox={`0 0 ${lossConfig.width} ${lossConfig.height}`}
           className="w-full h-auto"
         >

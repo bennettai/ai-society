@@ -386,7 +386,12 @@ export default function EqualityOfOddsArticlePage() {
                   ERROR RATES BY GROUP
                 </div>
 
-                <svg viewBox="0 0 380 220" className="w-full h-auto">
+                <svg
+                  role="img"
+                  aria-label="Error rates compared across groups"
+                  viewBox="0 0 380 220"
+                  className="w-full h-auto"
+                >
                   {/* axes */}
                   <line
                     x1="46"
@@ -563,7 +568,12 @@ export default function EqualityOfOddsArticlePage() {
                 <div className="text-[10px] font-mono uppercase tracking-widest text-[#75716B] mb-4">
                   DISPARITY AUDIT · 6s LOOP
                 </div>
-                <svg viewBox="0 0 340 180" className="w-full h-auto">
+                <svg
+                  role="img"
+                  aria-label="Disparity audit comparing error rates between groups"
+                  viewBox="0 0 340 180"
+                  className="w-full h-auto"
+                >
                   <line
                     x1="20"
                     y1="152"

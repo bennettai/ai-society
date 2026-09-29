@@ -6,6 +6,20 @@ import FoldLayout from "@/components/FoldLayout";
 import { Looped, LoopedStyles, PALETTE } from "@/components/looped";
 import MathTex from "@/components/MathTex";
 
+// Synthetic 1D data points for logistic classification
+const dataPoints = [
+  { x: -4, y: 0 },
+  { x: -3, y: 0 },
+  { x: -2, y: 0 },
+  { x: -1, y: 0 },
+  { x: 0, y: 0 },
+  { x: 1, y: 0 },
+  { x: 2, y: 1 },
+  { x: 3, y: 1 },
+  { x: 4, y: 1 },
+  { x: 5, y: 1 },
+];
+
 export default function LogisticRegressionArticlePage() {
   const [weight, setWeight] = useState<number>(1.2);
   const [bias, setBias] = useState<number>(-2.4);
@@ -14,20 +28,6 @@ export default function LogisticRegressionArticlePage() {
   // Section 05: one-unit push on the logit, read back as a probability at p = 0.5
   const oddsMult = Math.exp(coef);
   const pFromHalf = oddsMult / (1 + oddsMult);
-
-  // Synthetic 1D data points for logistic classification
-  const dataPoints = [
-    { x: -4, y: 0 },
-    { x: -3, y: 0 },
-    { x: -2, y: 0 },
-    { x: -1, y: 0 },
-    { x: 0, y: 0 },
-    { x: 1, y: 0 },
-    { x: 2, y: 1 },
-    { x: 3, y: 1 },
-    { x: 4, y: 1 },
-    { x: 5, y: 1 },
-  ];
 
   // Sigmoid probabilities and cross-entropy loss for current weights
   const stats = useMemo(() => {
@@ -484,6 +484,8 @@ export default function LogisticRegressionArticlePage() {
 
                 <div className="relative bg-[#EBF5FB]/30 border border-[#1A1816]/10 p-2 rounded-[2px] h-72 flex items-end">
                   <svg
+                    role="img"
+                    aria-label="Sigmoid curve of P(y=1|x) over class 0 and class 1 data points"
                     viewBox="-60 -10 120 120"
                     className="w-full h-full overflow-visible select-none"
                   >

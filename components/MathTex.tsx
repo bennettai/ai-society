@@ -27,6 +27,7 @@ export default function MathTex({ math, block = false }: MathTexProps) {
 
   return (
     <span
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: KaTeX output from author-written TeX; trust is off by default
       dangerouslySetInnerHTML={{ __html: html }}
       className={block ? "block my-2" : "inline-block"}
     />

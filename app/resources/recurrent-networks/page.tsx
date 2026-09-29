@@ -785,7 +785,11 @@ export default function RecurrentNetworksArticlePage() {
                     label="Animation of the error gradient decaying step by step as it travels backward through an unrolled vanilla RNN, then a gated variant where the bar height stays steady"
                     className="w-full"
                   >
-                    <svg viewBox="0 0 560 300" className="w-full select-none">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 560 300"
+                      className="w-full select-none"
+                    >
                       <text
                         x="52"
                         y="22"

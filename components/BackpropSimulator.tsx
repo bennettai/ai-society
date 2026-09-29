@@ -1,11 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   type DataPoint,
   type DatasetType,
   generateDataset,
-  generateIdealCurve,
   type NetworkStepTrace,
   NeuralNetworkEngine,
 } from "@/lib/neural-network-engine";
@@ -35,7 +34,7 @@ export default function BackpropSimulator() {
     engineRef.current.computeLoss(generateDataset("sin", 48)),
   ]);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [trainSpeed, setTrainSpeed] = useState<number>(2); // epochs per frame tick
+  const [trainSpeed] = useState<number>(2); // epochs per frame tick
 
   // Weights & biases state for reactive SVG rendering
   const [weightsState, setWeightsState] = useState<number[][][]>(() =>

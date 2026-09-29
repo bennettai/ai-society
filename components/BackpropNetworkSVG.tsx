@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { NetworkStepTrace } from "@/lib/neural-network-engine";
 
 interface BackpropNetworkSVGProps {
@@ -19,7 +19,7 @@ interface BackpropNetworkSVGProps {
 export default function BackpropNetworkSVG({
   shape,
   weights,
-  biases,
+  biases: _biases,
   stepTrace,
   animationPhase,
   activeLayerIdx,
@@ -28,8 +28,6 @@ export default function BackpropNetworkSVG({
   height = 550,
   onHoverInfo,
 }: BackpropNetworkSVGProps) {
-  const [hoveredElement, setHoveredElement] = useState<string | null>(null);
-
   // Layout node coordinates
   const nodeLayout = useMemo(() => {
     const squareSize = 34;
@@ -112,7 +110,7 @@ export default function BackpropNetworkSVG({
 
     // Hidden ReLU neuron: map activation to darkness
     let activation = 0;
-    if (stepTrace && stepTrace.activations[layerIdx]) {
+    if (stepTrace?.activations[layerIdx]) {
       activation = stepTrace.activations[layerIdx][nodeIdx] || 0;
     }
 
@@ -131,6 +129,8 @@ export default function BackpropNetworkSVG({
   return (
     <div className="relative select-none w-full">
       <svg
+        role="img"
+        aria-label="Neural network diagram showing weights, activations and gradients"
         viewBox={`0 0 ${width} ${height}`}
         className="w-full h-auto max-h-[560px] overflow-visible"
       >
@@ -237,6 +237,7 @@ export default function BackpropNetworkSVG({
                 }
 
                 return (
+                  // biome-ignore lint/a11y/noStaticElementInteractions: hover-only readout on diagram marks; making every mark a tab stop would swamp keyboard users
                   <path
                     key={linkKey}
                     d={pathD}
@@ -254,11 +255,9 @@ export default function BackpropNetworkSVG({
                           ? `, ∂L/∂w = ${grad.toFixed(4)}`
                           : "";
                       const msg = `Weight [L${lIdx}→L${lIdx + 1}] N${fromIdx}→N${toIdx}: w = ${w.toFixed(3)}${gradStr}`;
-                      setHoveredElement(msg);
                       onHoverInfo?.(msg);
                     }}
                     onMouseLeave={() => {
-                      setHoveredElement(null);
                       onHoverInfo?.(null);
                     }}
                   />
@@ -292,17 +291,16 @@ export default function BackpropNetworkSVG({
             />
 
             {/* Loss Box */}
+            {/* biome-ignore lint/a11y/noStaticElementInteractions: hover-only readout on diagram marks; making every mark a tab stop would swamp keyboard users */}
             <g
               transform={`translate(${lossNodeX - 22}, ${lossNodeY - 18})`}
               className="cursor-pointer"
               onMouseEnter={() => {
                 const lossVal = stepTrace ? stepTrace.loss.toFixed(4) : "—";
                 const msg = `Loss Node: MSE = 1/2(ŷ - y)², current sample error = ${lossVal}`;
-                setHoveredElement(msg);
                 onHoverInfo?.(msg);
               }}
               onMouseLeave={() => {
-                setHoveredElement(null);
                 onHoverInfo?.(null);
               }}
             >
@@ -357,6 +355,7 @@ export default function BackpropNetworkSVG({
                 stepTrace?.nodeDirections?.[lIdx]?.[node.nodeIdx] || 0;
 
               return (
+                // biome-ignore lint/a11y/noStaticElementInteractions: hover-only readout on diagram marks; making every mark a tab stop would swamp keyboard users
                 <g
                   key={nodeKey}
                   transform={`translate(${node.x - halfSize}, ${node.y - halfSize})`}
@@ -381,11 +380,9 @@ export default function BackpropNetworkSVG({
                         "—";
                       text = `Hidden Layer ${lIdx}, Node ${node.nodeIdx}: ReLU(z) = ${act} (pre-activation z = ${pre}), delta = ${d}`;
                     }
-                    setHoveredElement(text);
                     onHoverInfo?.(text);
                   }}
                   onMouseLeave={() => {
-                    setHoveredElement(null);
                     onHoverInfo?.(null);
                   }}
                 >

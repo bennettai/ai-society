@@ -502,7 +502,7 @@ export const StaggeredMenu = ({
       }
       style={
         accentColor
-          ? ({ ["--sm-accent"]: accentColor } as React.CSSProperties)
+          ? ({ "--sm-accent": accentColor } as React.CSSProperties)
           : undefined
       }
       data-position={position}
@@ -513,26 +513,23 @@ export const StaggeredMenu = ({
 
       <div ref={preLayersRef} className="sm-prelayers" aria-hidden="true">
         {(() => {
-          const raw =
-            colors && colors.length
-              ? colors.slice(0, 4)
-              : ["#3F1E46", "#DD6E2D"];
+          const raw = colors?.length
+            ? colors.slice(0, 4)
+            : ["#3F1E46", "#DD6E2D"];
           const arr = [...raw];
           if (arr.length >= 3) {
             const mid = Math.floor(arr.length / 2);
             arr.splice(mid, 1);
           }
           return arr.map((c, i) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: fixed positional layers, never reorder
             <div key={i} className="sm-prelayer" style={{ background: c }} />
           ));
         })()}
       </div>
 
-      <header
-        className="staggered-menu-header"
-        aria-label="Main navigation header"
-      >
-        <div ref={logoRef} className="sm-logo" aria-label="Logo">
+      <header className="staggered-menu-header">
+        <div ref={logoRef} className="sm-logo">
           <Link
             href="/"
             className="sm-logo-link"
@@ -544,6 +541,7 @@ export const StaggeredMenu = ({
               }
             }}
           >
+            {/* biome-ignore lint/performance/noImgElement: static export serves images unoptimized; next/image adds nothing here */}
             <img
               src={resolvedLogoUrl}
               alt="AI Society, Bennett University"
@@ -571,6 +569,7 @@ export const StaggeredMenu = ({
           >
             <span ref={textInnerRef} className="sm-toggle-textInner">
               {textLines.map((l, i) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: sequence repeats labels by position
                 <span className="sm-toggle-line" key={i}>
                   {l}
                 </span>
@@ -591,14 +590,16 @@ export const StaggeredMenu = ({
         aria-hidden={!open}
       >
         <div className="sm-panel-inner">
+          {/* biome-ignore lint/a11y/useSemanticElements: keeps list semantics in Safari/VoiceOver, which drops them under list-style: none */}
           <ul
             className="sm-panel-list"
+            // biome-ignore lint/a11y/noRedundantRoles: keeps list semantics in Safari/VoiceOver, which drops them under list-style: none
             role="list"
             data-numbering={displayItemNumbering || undefined}
           >
-            {items && items.length ? (
+            {items?.length ? (
               items.map((it, idx) => (
-                <li className="sm-panel-itemWrap" key={it.label + idx}>
+                <li className="sm-panel-itemWrap" key={it.label}>
                   <a
                     className="sm-panel-item"
                     href={
@@ -622,11 +623,16 @@ export const StaggeredMenu = ({
           </ul>
 
           {displaySocials && socialItems && socialItems.length > 0 && (
-            <div className="sm-socials" aria-label="Social links">
+            <div className="sm-socials">
               <h3 className="sm-socials-title">Socials</h3>
-              <ul className="sm-socials-list" role="list">
-                {socialItems.map((s, i) => (
-                  <li key={s.label + i} className="sm-socials-item">
+              {/* biome-ignore lint/a11y/useSemanticElements: keeps list semantics in Safari/VoiceOver, which drops them under list-style: none */}
+              <ul
+                className="sm-socials-list"
+                // biome-ignore lint/a11y/noRedundantRoles: keeps list semantics in Safari/VoiceOver, which drops them under list-style: none
+                role="list"
+              >
+                {socialItems.map((s) => (
+                  <li key={s.label} className="sm-socials-item">
                     <a
                       href={s.link}
                       target="_blank"

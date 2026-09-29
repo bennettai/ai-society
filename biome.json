@@ -22,13 +22,28 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "complexity": {
+        "noImportantStyles": "off"
+      }
     },
     "domains": {
       "next": "recommended",
       "react": "recommended"
     }
   },
+  "overrides": [
+    {
+      "includes": ["app/resources/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noArrayIndexKey": "off"
+          }
+        }
+      }
+    }
+  ],
   "assist": {
     "actions": {
       "source": {

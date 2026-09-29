@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import FoldLayout from "@/components/FoldLayout";
 import { Looped, LoopedStyles } from "@/components/looped";
 import MathTex from "@/components/MathTex";
@@ -145,17 +145,6 @@ export default function NeuralNetworksArticlePage() {
   }, []);
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Section 4: Synaptic looping wave phase (for loop animation)
-  // ─────────────────────────────────────────────────────────────────────────────
-  const [loopPhase, setLoopPhase] = useState<number>(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoopPhase((p) => (p + 1) % 100);
-    }, 40);
-    return () => clearInterval(interval);
-  }, []);
-
-  // ─────────────────────────────────────────────────────────────────────────────
   // Section 5: Forward pass interactive sliders
   // ─────────────────────────────────────────────────────────────────────────────
   const [inputX1, setInputX1] = useState<number>(0.8);
@@ -292,6 +281,8 @@ class FeedForwardNetwork(nn.Module):
 
                 <div className="w-full flex items-center justify-center py-6">
                   <svg
+                    role="img"
+                    aria-label="Feed-forward network topology"
                     viewBox="0 0 460 220"
                     className="w-full h-auto select-none max-w-[420px]"
                   >
@@ -500,6 +491,8 @@ class FeedForwardNetwork(nn.Module):
 
                 <div className="w-full flex items-center justify-center py-4">
                   <svg
+                    role="img"
+                    aria-label="Weighted connections scaling input signals"
                     viewBox="0 0 460 220"
                     className="w-full h-auto select-none max-w-[420px]"
                   >
@@ -844,6 +837,8 @@ class FeedForwardNetwork(nn.Module):
                 {/* SVG Graph + 2D Decision Feature Space Output */}
                 <div className="w-full flex items-center justify-center py-2">
                   <svg
+                    role="img"
+                    aria-label="Network from input sensors to a 2D decision output"
                     viewBox="0 0 540 260"
                     className="w-full h-auto select-none max-w-[560px]"
                   >
@@ -1019,7 +1014,6 @@ class FeedForwardNetwork(nn.Module):
                           {(() => {
                             const rad = (boundaryAngle * Math.PI) / 180;
                             const yMid = 85 + boundaryOffset;
-                            const dx = 90 * Math.cos(rad);
                             const dy = 90 * Math.sin(rad);
                             const p1x = 0;
                             const p1y = Math.max(0, Math.min(170, yMid - dy));
@@ -1930,6 +1924,7 @@ class FeedForwardNetwork(nn.Module):
                       </td>
                       <td className="p-3.5">
                         <svg
+                          aria-hidden="true"
                           width="60"
                           height="32"
                           viewBox="0 0 60 32"
@@ -1967,6 +1962,7 @@ class FeedForwardNetwork(nn.Module):
                       </td>
                       <td className="p-3.5">
                         <svg
+                          aria-hidden="true"
                           width="60"
                           height="32"
                           viewBox="0 0 60 32"
@@ -2004,6 +2000,7 @@ class FeedForwardNetwork(nn.Module):
                       </td>
                       <td className="p-3.5">
                         <svg
+                          aria-hidden="true"
                           width="60"
                           height="32"
                           viewBox="0 0 60 32"
@@ -2041,6 +2038,7 @@ class FeedForwardNetwork(nn.Module):
                       </td>
                       <td className="p-3.5">
                         <svg
+                          aria-hidden="true"
                           width="60"
                           height="32"
                           viewBox="0 0 60 32"
@@ -2163,6 +2161,8 @@ class FeedForwardNetwork(nn.Module):
 
                 <div className="w-full flex items-center justify-center py-4">
                   <svg
+                    role="img"
+                    aria-label="Multi-layer perceptron with signals flowing through its layers"
                     viewBox="0 0 460 260"
                     className="w-full h-auto select-none max-w-[440px]"
                   >
@@ -2347,6 +2347,8 @@ class FeedForwardNetwork(nn.Module):
 
                 <div className="w-full flex items-center justify-center py-4">
                   <svg
+                    role="img"
+                    aria-label="Live forward pass through the network for the current slider inputs"
                     viewBox="0 0 460 250"
                     className="w-full h-auto select-none max-w-[440px]"
                   >
@@ -2627,6 +2629,8 @@ class FeedForwardNetwork(nn.Module):
 
                 <div className="w-full flex items-center justify-center py-4">
                   <svg
+                    role="img"
+                    aria-label="Backpropagation gradient arcs flowing backward through the network"
                     viewBox="0 0 460 240"
                     className="w-full h-auto select-none max-w-[440px]"
                   >
@@ -3196,6 +3200,7 @@ class FeedForwardNetwork(nn.Module):
                   className="w-full max-w-[520px]"
                 >
                   <svg
+                    aria-hidden="true"
                     viewBox="0 0 520 260"
                     className="w-full h-auto select-none"
                   >

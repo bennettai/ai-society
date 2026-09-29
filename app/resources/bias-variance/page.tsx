@@ -321,7 +321,11 @@ export default function BiasVarianceArticlePage() {
                 </div>
                 <div className="bg-[#F4F1EA] border border-[#1A1816]/10 p-3 rounded-[2px]">
                   <Looped label="Animation of a cluster of throws on a target, cycling between a tight cluster aimed away from the bullseye and a wide cluster centred on the bullseye">
-                    <svg viewBox="0 0 420 300" className="w-full select-none">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 420 300"
+                      className="w-full select-none"
+                    >
                       {/* Target rings, bullseye is the truth */}
                       {[96, 72, 48, 26, 9].map((r, i) => (
                         <circle

@@ -251,7 +251,12 @@ export default function DoubleDescentArticlePage() {
                 <div className="text-[10px] font-mono uppercase tracking-widest text-[#75716B] mb-4">
                   The classical U · bias-variance
                 </div>
-                <svg viewBox="0 0 380 200" className="w-full h-auto">
+                <svg
+                  role="img"
+                  aria-label="Classical U-shaped test error curve from the bias-variance trade-off"
+                  viewBox="0 0 380 200"
+                  className="w-full h-auto"
+                >
                   <line
                     x1="40"
                     y1="170"
@@ -416,7 +421,12 @@ export default function DoubleDescentArticlePage() {
                         : "OVER-PARAMETERISED"}
                   </span>
                 </div>
-                <svg viewBox="0 0 420 260" className="w-full h-auto">
+                <svg
+                  role="img"
+                  aria-label="Test error plotted against model capacity"
+                  viewBox="0 0 420 260"
+                  className="w-full h-auto"
+                >
                   {/* axes */}
                   <line
                     x1={X0}
@@ -560,7 +570,12 @@ export default function DoubleDescentArticlePage() {
               <div className="text-[10px] font-mono uppercase tracking-widest text-[#75716B] mb-3">
                 DOUBLE DESCENT · 9s LOOP
               </div>
-              <svg viewBox="0 0 420 260" className="w-full h-auto">
+              <svg
+                role="img"
+                aria-label="Double descent curve with a marker moving along it"
+                viewBox="0 0 420 260"
+                className="w-full h-auto"
+              >
                 <line
                   x1={X0}
                   y1="236"

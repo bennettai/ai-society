@@ -328,6 +328,7 @@ function TransformersAttentionPicker() {
         const isColActive = activeCell.col === ci;
         const xCenter = 68 + ci * 46;
         return (
+          // biome-ignore lint/a11y/noStaticElementInteractions: mouse-only preview inside the card link; the link is the keyboard target and focusable cells would nest interactive content in <a>
           <g
             key={`col-hdr-${token}`}
             className="cursor-pointer"
@@ -370,6 +371,7 @@ function TransformersAttentionPicker() {
         return (
           <g key={`row-${qToken}`}>
             {/* Row Header */}
+            {/* biome-ignore lint/a11y/noStaticElementInteractions: mouse-only preview inside the card link; the link is the keyboard target and focusable cells would nest interactive content in <a> */}
             <g
               className="cursor-pointer"
               onClick={(e) => {
@@ -411,6 +413,7 @@ function TransformersAttentionPicker() {
                 : `rgba(222, 93, 53, ${cell.bgOpacity})`;
 
               return (
+                // biome-ignore lint/a11y/noStaticElementInteractions: mouse-only preview inside the card link; the link is the keyboard target and focusable cells would nest interactive content in <a>
                 <g
                   key={`cell-${qToken}-${colToken}`}
                   className="cursor-pointer"
@@ -697,6 +700,7 @@ export default function ResourcesPage() {
                     {/* 01: LINEAR REGRESSION */}
                     {article.slug === "linear-regression" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -750,6 +754,7 @@ export default function ResourcesPage() {
                     {/* 02: LOGISTIC REGRESSION */}
                     {article.slug === "logistic-regression" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -801,6 +806,7 @@ export default function ResourcesPage() {
                     {/* 03: PRECISION-RECALL & CONFUSION MATRIX */}
                     {article.slug === "precision-recall" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -883,6 +889,7 @@ export default function ResourcesPage() {
                     {/* 04: ROC & AUC */}
                     {article.slug === "roc-auc" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -938,6 +945,7 @@ export default function ResourcesPage() {
                     {/* 05: CROSS-VALIDATION */}
                     {article.slug === "cross-validation" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -969,6 +977,7 @@ export default function ResourcesPage() {
                     {/* 06: DECISION TREES & RANDOM FORESTS */}
                     {article.slug === "decision-trees" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -1107,6 +1116,7 @@ export default function ResourcesPage() {
                     {/* 07: NEURAL NETWORKS (FEATURED FLAGSHIP) */}
                     {article.slug === "neural-networks" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 340 140"
                         className="w-full max-w-[320px] h-auto select-none relative z-10"
                       >
@@ -1249,6 +1259,7 @@ export default function ResourcesPage() {
                     {/* 08: CONVOLUTIONAL NEURAL NETWORKS (CNNs) */}
                     {article.slug === "convolutional-networks" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -1345,6 +1356,7 @@ export default function ResourcesPage() {
                     {/* 09: RECURRENT NETWORKS (RNNs / LSTMs) */}
                     {article.slug === "recurrent-networks" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -1441,6 +1453,7 @@ export default function ResourcesPage() {
                     {/* 10: RANDOM FOREST */}
                     {article.slug === "random-forest" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -1530,6 +1543,7 @@ export default function ResourcesPage() {
                     {/* 11: BIAS-VARIANCE */}
                     {article.slug === "bias-variance" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -1598,6 +1612,7 @@ export default function ResourcesPage() {
                     {/* 12: TRAIN / TEST / VALIDATION */}
                     {article.slug === "train-test-validation" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -1707,6 +1722,7 @@ export default function ResourcesPage() {
                     {/* 13: DOUBLE DESCENT */}
                     {article.slug === "double-descent" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -1781,6 +1797,7 @@ export default function ResourcesPage() {
                     {/* 14: EQUALITY OF ODDS */}
                     {article.slug === "equality-of-odds" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[200px] h-auto select-none relative z-10"
                       >
@@ -1868,6 +1885,7 @@ export default function ResourcesPage() {
                     {/* 15: REINFORCEMENT LEARNING */}
                     {article.slug === "reinforcement-learning" && (
                       <svg
+                        aria-hidden="true"
                         viewBox="0 0 240 120"
                         className="w-full max-w-[210px] h-auto select-none relative z-10"
                       >
@@ -2034,6 +2052,7 @@ export default function ResourcesPage() {
                   {cardInner}
                 </Link>
               ) : (
+                // biome-ignore lint/a11y/useSemanticElements: card holds block-level content, which is invalid inside <button>
                 <div
                   key={article.slug}
                   role="button"
@@ -2041,6 +2060,7 @@ export default function ResourcesPage() {
                   onClick={() => setUpcomingNotice(article.title)}
                   onKeyDown={(e: React.KeyboardEvent) => {
                     if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
                       setUpcomingNotice(article.title);
                     }
                   }}

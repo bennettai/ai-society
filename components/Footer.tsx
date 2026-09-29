@@ -226,6 +226,8 @@ export default function Footer() {
               >
                 {STAIR_SHAPES.map((shape, i) => (
                   <svg
+                    aria-hidden="true"
+                    // biome-ignore lint/suspicious/noArrayIndexKey: fixed decorative shapes, never reorder
                     key={i}
                     viewBox="0 0 256 256"
                     className="h-7 w-7 shrink-0"
@@ -273,6 +275,7 @@ export default function Footer() {
       <div className="mt-2 overflow-hidden rounded-[24px] bg-dark py-3.5 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white">
         <div className="footer-text-ticker flex w-max whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: identical ticker copies, only position differs
             <span key={i} className="flex items-center gap-0 px-0">
               <span className="px-5">
                 © {new Date().getFullYear()} AI Society · Bennett University

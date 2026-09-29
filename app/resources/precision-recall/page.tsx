@@ -1451,6 +1451,7 @@ export default function PrecisionRecallArticlePage() {
                 className="bg-[#F4F1EA] border border-[#1A1816]/10 p-3 rounded-[2px] overflow-x-auto"
               >
                 <svg
+                  aria-hidden="true"
                   viewBox="0 0 780 340"
                   className="w-full min-w-[620px] select-none"
                 >

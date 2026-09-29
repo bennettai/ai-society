@@ -16,28 +16,28 @@ if (typeof window !== "undefined") {
  * with no overlay, badge, or label. Alt text carries the meaning instead.
  */
 const COLUMN_ONE = {
-  src: assetPath("/images/event-club-carnival.png"),
+  src: assetPath("/images/event-club-carnival.webp"),
   alt: "Members gathered at the Club Carnival induction festival",
 };
 
 const COLUMN_TWO = [
   {
-    src: assetPath("/images/event-ai-101.png"),
+    src: assetPath("/images/event-ai-101.webp"),
     alt: "Attendees working through the AI 101 foundations workshop",
   },
   {
-    src: assetPath("/images/event-ai-hunt.png"),
+    src: assetPath("/images/event-ai-hunt.webp"),
     alt: "Teams competing in the AI Hunt 2.0 algorithmic challenge",
   },
 ];
 
 const COLUMN_THREE = [
   {
-    src: assetPath("/images/event-tech-arena.png"),
+    src: assetPath("/images/event-tech-arena.webp"),
     alt: "The TechArena 2025 symposium hall in session",
   },
   {
-    src: assetPath("/images/event-project-showcase.png"),
+    src: assetPath("/images/event-project-showcase.webp"),
     alt: "Student projects on display at the Project Showcase expo",
   },
 ];

@@ -125,7 +125,7 @@ export default function Hero() {
     {
       id: "panel-2",
       path: SHAPE_2,
-      image: "/images/clubbattle.jpg", // Replaced with Club Battle image
+      image: "/images/clubbattle.webp", // Replaced with Club Battle image
       x: 400,
       mobileX: 400,
       mobileY: 0,
@@ -134,7 +134,7 @@ export default function Hero() {
     {
       id: "panel-3",
       path: SHAPE_3,
-      image: "/images/hero3.jpg",
+      image: "/images/hero3.webp",
       x: 800,
       mobileX: 0,
       mobileY: 400,

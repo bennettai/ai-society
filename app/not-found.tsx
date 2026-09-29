@@ -102,7 +102,7 @@ export default function NotFound() {
 
           <ShapeImg
             shape="moon"
-            src="/images/clubbattle.jpg"
+            src="/images/clubbattle.webp"
             uid="b"
             style={{
               width: "clamp(70px,10vw,160px)",
@@ -129,7 +129,7 @@ export default function NotFound() {
 
           <ShapeImg
             shape="donut"
-            src="/images/hero3.jpg"
+            src="/images/hero3.webp"
             uid="c"
             style={{
               width: "clamp(80px,11vw,175px)",

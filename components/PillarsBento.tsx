@@ -27,10 +27,13 @@ const NUMERAL_SPOTS = [
 ];
 
 /* Full-circle guide paths (r=44) around each ring — the duplicated title
-   fills the whole loop so the endless rotation has no gap. */
+   is stretched to exactly one circumference (textLength) so the loop closes
+   without overflowing the path or leaving a gap, whatever the title length. */
+const RING_RADIUS = 44;
+const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 const RING_ARCS = NUMERAL_SPOTS.map(
   ({ x, y }) =>
-    `M ${x} ${y - 44} A 44 44 0 1 1 ${x} ${y + 44} A 44 44 0 1 1 ${x} ${y - 44}`,
+    `M ${x} ${y - RING_RADIUS} A ${RING_RADIUS} ${RING_RADIUS} 0 1 1 ${x} ${y + RING_RADIUS} A ${RING_RADIUS} ${RING_RADIUS} 0 1 1 ${x} ${y - RING_RADIUS}`,
 );
 
 export default function PillarsBento() {
@@ -222,15 +225,16 @@ export default function PillarsBento() {
                 <text
                   key={pillar.numeral}
                   className="pillar-ring-text font-display font-bold"
-                  fontSize="9.5"
-                  letterSpacing="2"
+                  fontSize="7"
                   fill="#EFECE6"
                 >
                   <textPath
                     href={`#pillar-arc-${i}`}
                     startOffset="0"
+                    textLength={RING_CIRCUMFERENCE}
+                    lengthAdjust="spacing"
                   >
-                    {`${pillar.title} . ${pillar.title} . ${pillar.title} . ${pillar.title} . ${pillar.title} . ${pillar.title} . `}
+                    {`${pillar.title} · ${pillar.title} ·\u00A0`}
                   </textPath>
                 </text>
               ))}

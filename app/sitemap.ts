@@ -8,7 +8,6 @@ const SITE_URL =
 const PAGES = [
   "",
   "/events",
-  "/learning",
   "/resources",
   "/team",
   "/alumni",

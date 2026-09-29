@@ -21,7 +21,7 @@ const STEPS = [
     numeral: "02",
     title: "Training & optimisation",
     note: "Fine-tuning weights, evaluating inference latency, and running adversarial perturbation tests.",
-    preview: assetPath("/images/event-ai-101.png"),
+    preview: assetPath("/images/event-ai-101.webp"),
   },
   {
     numeral: "03",

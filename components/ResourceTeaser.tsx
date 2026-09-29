@@ -89,7 +89,7 @@ export default function ResourceTeaser() {
           {/* Background: User-provided gradient image */}
           <div className="absolute -inset-y-8 inset-x-0 overflow-hidden pointer-events-none select-none">
             <Image
-              src={assetPath("/gradient/1.png")}
+              src={assetPath("/gradient/1.webp")}
               alt=""
               aria-hidden="true"
               fill

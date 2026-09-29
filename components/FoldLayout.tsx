@@ -18,7 +18,7 @@ const MENU_ITEMS = [
   {
     label: "Learning",
     ariaLabel: "View AI Learning Center",
-    link: "/learning",
+    link: "/resources",
   },
   {
     label: "Alumni",

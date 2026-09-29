@@ -24,13 +24,13 @@ const CHANNELS = [
 /* Strip of life-at-AIS photographs that loops forever. */
 const MARQUEE_IMAGES = [
   assetPath("/images/hero1.jpg"),
-  assetPath("/images/clubbattle.jpg"),
-  assetPath("/images/event-ai-101.png"),
-  assetPath("/images/hero3.jpg"),
-  assetPath("/images/event-workshop.png"),
+  assetPath("/images/clubbattle.webp"),
+  assetPath("/images/event-ai-101.webp"),
+  assetPath("/images/hero3.webp"),
+  assetPath("/images/event-workshop.webp"),
   assetPath("/images/hero2.jpg"),
-  assetPath("/images/event-tech-arena.png"),
-  assetPath("/images/event-project-showcase.png"),
+  assetPath("/images/event-tech-arena.webp"),
+  assetPath("/images/event-project-showcase.webp"),
 ];
 
 function MarqueeHalf() {

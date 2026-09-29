@@ -29,7 +29,7 @@ const ALL_EVENTS: ExtendedEvent[] = [
     date: "FEBRUARY 2025",
     year: "2025",
     category: "FLAGSHIP",
-    image: assetPath("/images/event-tech-arena.png"),
+    image: assetPath("/images/event-tech-arena.webp"),
     shortDesc:
       "The premier national collegiate tech symposium featuring multi-track hackathons, keynote research panels, and rapid AI prototyping leagues.",
     fullDesc:
@@ -50,7 +50,7 @@ const ALL_EVENTS: ExtendedEvent[] = [
     date: "SEPTEMBER 2024",
     year: "2024",
     category: "HACKATHONS",
-    image: assetPath("/images/event-ai-hunt.png"),
+    image: assetPath("/images/event-ai-hunt.webp"),
     shortDesc:
       "A high-octane 48-hour cryptic technical scavenger hunt deciphering adversarial perturbations, neural steganography, and algorithmic logic gates.",
     fullDesc:
@@ -71,7 +71,7 @@ const ALL_EVENTS: ExtendedEvent[] = [
     date: "APRIL 2025",
     year: "2025",
     category: "WORKSHOPS",
-    image: assetPath("/images/event-workshop.png"),
+    image: assetPath("/images/event-workshop.webp"),
     shortDesc:
       "Advanced technical deep-dive bridging Spatial Computing, 3D Gaussian Splatting, and real-time multi-modal diffusion pipelines.",
     fullDesc:
@@ -92,7 +92,7 @@ const ALL_EVENTS: ExtendedEvent[] = [
     date: "MARCH 2025",
     year: "2025",
     category: "DEMO DAYS",
-    image: assetPath("/images/event-project-showcase.png"),
+    image: assetPath("/images/event-project-showcase.webp"),
     shortDesc:
       "Public exposition of ten member-engineered production models, vision-language systems, and autonomous agentic workflows.",
     fullDesc:
@@ -113,7 +113,7 @@ const ALL_EVENTS: ExtendedEvent[] = [
     date: "AUGUST 2024",
     year: "2024",
     category: "WORKSHOPS",
-    image: assetPath("/images/event-ai-101.png"),
+    image: assetPath("/images/event-ai-101.webp"),
     shortDesc:
       "Comprehensive introductory bootcamp decoding gradient descent, loss landscapes, and practical PyTorch implementation from scratch.",
     fullDesc:
@@ -134,7 +134,7 @@ const ALL_EVENTS: ExtendedEvent[] = [
     date: "JULY 2024",
     year: "2024",
     category: "FLAGSHIP",
-    image: assetPath("/images/event-club-carnival.png"),
+    image: assetPath("/images/event-club-carnival.webp"),
     shortDesc:
       "Annual club induction festival welcoming freshers to the frontier of AI research, interactive model demos, and tech roadmaps.",
     fullDesc:

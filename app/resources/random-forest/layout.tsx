@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learning Center",
+  title: "The Random Forest Algorithm",
   description:
-    "Interactive visual essays, mathematical derivations, and hands-on simulations from first principles. Explore the complete machine learning curriculum.",
+    "Bagging, random feature sub-sampling, and majority voting. How averaging many decorrelated trees collapses variance without adding bias.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learning Center",
+  title: "K-Fold Partitioning & Generalization",
   description:
-    "Interactive visual essays, mathematical derivations, and hands-on simulations from first principles. Explore the complete machine learning curriculum.",
+    "Mitigating sample bias and estimating performance variance through rotational holdout splits and out-of-fold validation.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

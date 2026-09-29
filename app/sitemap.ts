@@ -34,11 +34,12 @@ const ESSAYS = [
   "double-descent",
   "equality-of-odds",
   "reinforcement-learning",
+  "transformers",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    ...PAGES.map((path) => ({ url: `${SITE_URL}${path}` })),
-    ...ESSAYS.map((slug) => ({ url: `${SITE_URL}/resources/${slug}` })),
+    ...PAGES.map((path) => ({ url: `${SITE_URL}${path}/` })),
+    ...ESSAYS.map((slug) => ({ url: `${SITE_URL}/resources/${slug}/` })),
   ];
 }

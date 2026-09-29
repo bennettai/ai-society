@@ -12,9 +12,12 @@ const INDEX_LINKS = [
 ];
 
 const CHANNELS = [
-  { href: "https://github.com", label: "GitHub" },
+  { href: "https://github.com/bennettai", label: "GitHub" },
   { href: "https://www.instagram.com/ais_bennett/", label: "Instagram" },
-  { href: "https://linkedin.com", label: "LinkedIn" },
+  {
+    href: "https://www.linkedin.com/company/bennett-artificial-intelligence-society/",
+    label: "LinkedIn",
+  },
   { href: "https://www.bennett.edu.in", label: "Bennett University" },
 ];
 

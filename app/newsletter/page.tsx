@@ -228,7 +228,7 @@ export default function NewsletterPage() {
               <span>← Return Home</span>
             </Link>
             <Link
-              href="/learning"
+              href="/resources"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FAF9F5] border border-[#1A1816]/20 text-[#1A1816] hover:bg-white font-mono text-[12px] uppercase tracking-wider font-bold transition-transform active:scale-95"
             >
               <span>Explore Learning Center →</span>

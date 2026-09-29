@@ -39,8 +39,11 @@ const MENU_ITEMS = [
 ];
 
 const SOCIAL_ITEMS = [
-  { label: "GitHub", link: "https://github.com" },
-  { label: "LinkedIn", link: "https://linkedin.com" },
+  { label: "GitHub", link: "https://github.com/bennettai" },
+  {
+    label: "LinkedIn",
+    link: "https://www.linkedin.com/company/bennett-artificial-intelligence-society/",
+  },
   { label: "Instagram", link: "https://www.instagram.com/ais_bennett/" },
 ];
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learning Center",
+  title: "Convolutional Neural Networks (CNNs)",
   description:
-    "Interactive visual essays, mathematical derivations, and hands-on simulations from first principles. Explore the complete machine learning curriculum.",
+    "Spatial receptive fields, 2D discrete convolution kernels, hierarchical feature maps, and spatial invariance through pooling layers.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

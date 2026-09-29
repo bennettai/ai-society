@@ -17,8 +17,11 @@ const NAV_LINKS = [
 ];
 
 const SOCIALS = [
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "GitHub", href: "https://github.com/bennettai" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/bennett-artificial-intelligence-society/",
+  },
   { label: "Instagram", href: "https://www.instagram.com/ais_bennett/" },
 ];
 

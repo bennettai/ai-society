@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learning Center",
+  title: "Linear Regression: Ordinary Least Squares",
   description:
-    "Interactive visual essays, mathematical derivations, and hands-on simulations from first principles. Explore the complete machine learning curriculum.",
+    "Minimizing orthogonal Euclidean residuals in parameter space. Closed-form normal equations versus iterative gradient descent steps.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

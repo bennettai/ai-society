@@ -1,15 +1,16 @@
 "use client";
 
-import React, {
+import { gsap } from "gsap";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import type React from "react";
+import {
   useCallback,
   useEffect,
   useLayoutEffect,
   useRef,
   useState,
 } from "react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { gsap } from "gsap";
 import { assetPath } from "@/lib/basePath";
 import "./StaggeredMenu.css";
 

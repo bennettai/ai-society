@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  NeuralNetworkEngine,
+  type DataPoint,
+  type DatasetType,
   generateDataset,
   generateIdealCurve,
-  type DatasetType,
-  type DataPoint,
   type NetworkStepTrace,
+  NeuralNetworkEngine,
 } from "@/lib/neural-network-engine";
 import BackpropNetworkSVG from "./BackpropNetworkSVG";
 import BackpropPlots from "./BackpropPlots";

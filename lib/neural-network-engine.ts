@@ -277,8 +277,8 @@ export class NeuralNetworkEngine {
     const eps = 1e-8;
     // Scale effective step size with user learning rate (at lr = 0.001, alpha = 0.018)
     const alpha = lr * 18.0;
-    const beta1t = Math.pow(beta1, this.t);
-    const beta2t = Math.pow(beta2, this.t);
+    const beta1t = beta1 ** this.t;
+    const beta2t = beta2 ** this.t;
 
     for (let l = 0; l < this.weights.length; l++) {
       for (let j = 0; j < this.shape[l + 1]; j++) {
@@ -403,7 +403,7 @@ export class NeuralNetworkEngine {
 
     const projectedRes = tempEngine.forwardSingle(x);
     projectedOutput = projectedRes.output;
-    projectedLoss = 0.5 * Math.pow(projectedOutput - y, 2);
+    projectedLoss = 0.5 * (projectedOutput - y) ** 2;
 
     return {
       exampleIndex,

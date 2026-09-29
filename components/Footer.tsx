@@ -83,15 +83,21 @@ export default function Footer() {
       {/* Cream panel — wordmark, index, channels, visit block */}
       <div
         className="relative rounded-[24px] p-5 text-ink sm:p-8 lg:p-10 overflow-hidden"
-        style={{ backgroundColor: '#EFECE6' }}
+        style={{ backgroundColor: "#EFECE6" }}
       >
-
         {/* Shape 14 — slashes: top-right (no overlap with shape 13) */}
         <svg
           aria-hidden="true"
           viewBox="0 0 256 256"
           className="pointer-events-none absolute hidden sm:block"
-          style={{ bottom: 100, right: 0, width: 100, height: 100, color: STAIR_SHAPES[0].color, opacity: 1 }}
+          style={{
+            bottom: 100,
+            right: 0,
+            width: 100,
+            height: 100,
+            color: STAIR_SHAPES[0].color,
+            opacity: 1,
+          }}
         >
           <path d={STAIR_SHAPES[0].d} fill="currentColor" />
         </svg>
@@ -100,7 +106,14 @@ export default function Footer() {
           aria-hidden="true"
           viewBox="0 0 256 256"
           className="pointer-events-none absolute hidden sm:block"
-          style={{ bottom: 0, right: 0, width: 100, height: 100, color: STAIR_SHAPES[1].color, opacity: 1 }}
+          style={{
+            bottom: 0,
+            right: 0,
+            width: 100,
+            height: 100,
+            color: STAIR_SHAPES[1].color,
+            opacity: 1,
+          }}
         >
           <path d={STAIR_SHAPES[1].d} fill="currentColor" />
         </svg>
@@ -109,7 +122,14 @@ export default function Footer() {
           aria-hidden="true"
           viewBox="0 0 256 256"
           className="pointer-events-none absolute hidden sm:block"
-          style={{ bottom: 0, right: 100, width: 100, height: 100, color: STAIR_SHAPES[2].color, opacity: 1 }}
+          style={{
+            bottom: 0,
+            right: 100,
+            width: 100,
+            height: 100,
+            color: STAIR_SHAPES[2].color,
+            opacity: 1,
+          }}
         >
           <path d={STAIR_SHAPES[2].d} fill="currentColor" />
         </svg>
@@ -120,7 +140,9 @@ export default function Footer() {
               <span
                 aria-hidden
                 className="block h-12 w-[190px] bg-left bg-contain bg-no-repeat brightness-0"
-                style={{ backgroundImage: `url('${assetPath("/images/ais-logo.png")}')` }}
+                style={{
+                  backgroundImage: `url('${assetPath("/images/ais-logo.png")}')`,
+                }}
               />
               <h2 className="mt-6 font-display text-[clamp(44px,6.5vw,92px)] font-extrabold leading-[0.95] tracking-[-0.04em]">
                 AI Society
@@ -198,7 +220,10 @@ export default function Footer() {
               </ul>
 
               {/* Mobile-only: shapes in a flat straight horizontal row */}
-              <div aria-hidden="true" className="mt-5 flex items-center gap-2 sm:hidden">
+              <div
+                aria-hidden="true"
+                className="mt-5 flex items-center gap-2 sm:hidden"
+              >
                 {STAIR_SHAPES.map((shape, i) => (
                   <svg
                     key={i}
@@ -249,10 +274,16 @@ export default function Footer() {
         <div className="footer-text-ticker flex w-max whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
             <span key={i} className="flex items-center gap-0 px-0">
-              <span className="px-5">© {new Date().getFullYear()} AI Society · Bennett University</span>
-              <span aria-hidden className="opacity-40">.</span>
+              <span className="px-5">
+                © {new Date().getFullYear()} AI Society · Bennett University
+              </span>
+              <span aria-hidden className="opacity-40">
+                .
+              </span>
               <span className="px-5">Greater Noida · India</span>
-              <span aria-hidden className="opacity-40">.</span>
+              <span aria-hidden className="opacity-40">
+                .
+              </span>
             </span>
           ))}
         </div>

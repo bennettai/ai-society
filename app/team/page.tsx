@@ -3,9 +3,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import FoldLayout from "@/components/FoldLayout";
-import Image from "next/image";
 import { assetPath } from "@/lib/basePath";
 
 if (typeof window !== "undefined") {
@@ -219,7 +219,8 @@ export default function TeamPage() {
                   CORE REVEAL SOON.
                 </h2>
                 <p className="font-mono text-[13px] sm:text-[14px] uppercase tracking-wider text-[#1A1816]/70 max-w-[50ch] leading-relaxed">
-                  The executive council, technical leads, and research chairs for the AI Society 2026–2027 tenure will be revealed here.
+                  The executive council, technical leads, and research chairs
+                  for the AI Society 2026–2027 tenure will be revealed here.
                 </p>
               </div>
             </div>

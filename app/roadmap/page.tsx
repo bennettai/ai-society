@@ -33,6 +33,7 @@ interface FloatShape {
   opacity: number;
 }
 
+// biome-ignore format: hand-aligned table
 const floaters: FloatShape[] = [
   { id: "S1",   size: 140, top: "6%",  left: "4%",   rotate: 12,  delay: 0,    duration: 8,  opacity: 0.13 },
   { id: "S17",  size: 90,  top: "12%", left: "80%",  rotate: -20, delay: 1.2,  duration: 7,  opacity: 0.10 },
@@ -48,7 +49,6 @@ export default function RoadmapPage() {
   return (
     <FoldLayout>
       <main className="grow flex items-center justify-center min-h-screen bg-[#EFECE6] text-[#1A1816] relative overflow-hidden">
-
         {/* ── Floating shapes ──────────────────────────────────────── */}
         {floaters.map((f) => (
           <svg
@@ -83,7 +83,8 @@ export default function RoadmapPage() {
             width: 500,
             height: 500,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(222,93,53,0.12) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(222,93,53,0.12) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -96,14 +97,14 @@ export default function RoadmapPage() {
             width: 420,
             height: 420,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(222,93,53,0.09) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(222,93,53,0.09) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
 
         {/* ── Centre content ───────────────────────────────────────── */}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
-
           {/* Pulsing pill badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#DE5D35]/10 border border-[#DE5D35]/30 text-[#DE5D35] font-mono text-[11px] font-bold tracking-widest uppercase mb-10 shadow-sm">
             <span className="relative flex h-2 w-2">
@@ -125,8 +126,8 @@ export default function RoadmapPage() {
 
           {/* Sub-line */}
           <p className="text-[15px] text-[#75716B] leading-relaxed max-w-[36ch] mt-2">
-            Our official 2025–2027 roadmap is currently undergoing
-            technical calibration. Check back at the next symposium.
+            Our official 2025–2027 roadmap is currently undergoing technical
+            calibration. Check back at the next symposium.
           </p>
         </div>
 

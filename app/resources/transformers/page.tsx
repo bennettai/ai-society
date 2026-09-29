@@ -590,9 +590,10 @@ function getAngleMidpoint(
   while (diff < -Math.PI) diff += 2 * Math.PI;
   while (diff > Math.PI) diff -= 2 * Math.PI;
   const midAngle = angleA + diff / 2;
+  // Round so server- and client-rendered SVG attributes match on hydration
   return {
-    x: r * Math.cos(midAngle),
-    y: r * Math.sin(midAngle),
+    x: Math.round(r * Math.cos(midAngle) * 100) / 100,
+    y: Math.round(r * Math.sin(midAngle) * 100) / 100,
   };
 }
 

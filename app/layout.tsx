@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://bennettai.github.io/ai-society",
+      "https://www.ai-society.club",
   ),
   title: {
     default:
